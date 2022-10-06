@@ -1,9 +1,7 @@
 package com.example.demo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Universite {
@@ -12,6 +10,8 @@ public class Universite {
     private int idDepart;
     private String nomUniv;
 
+    @OneToMany
+    List<Departement> departements;
     @Override
     public String toString() {
         return "Universite{" +

@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import javax.persistence.*;
+import java.util.List;
 
 enum Niveau{
     JUNIOR,
@@ -15,6 +16,11 @@ public class Equipe {
     private String nomEquipe;
     private Niveau niveau;
 
+    @OneToOne
+    private DetailEquipe detailEquipe;
+
+    @ManyToMany(cascade = CascadeType.ALL,mappedBy = "equipes")
+    private List<Etudiant> etudiants;
     @Override
     public String toString() {
         return "Equipe{" +

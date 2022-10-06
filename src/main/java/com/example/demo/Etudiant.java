@@ -2,6 +2,9 @@ package com.example.demo;
 
 
 import javax.persistence.*;
+import java.util.List;
+import java.util.Set;
+
 enum Option {
 GAMIX,SE,SIM,NIDS}
 @Entity
@@ -14,7 +17,15 @@ public class Etudiant {
     private String prenomE;
     private String nomE;
     private Option option;
-    
+
+    @OneToMany(mappedBy = "etudiant")
+    private List<Contrat> contrat;
+
+    @ManyToOne
+    private Departement departement;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<Equipe> equipes;
     public String getPrenomE() {
         return prenomE;
     }

@@ -22,6 +22,8 @@ public class Contrat {
     private Date dateFinContrat;
     private Specialite specialite;
     private boolean archive;
+    @ManyToOne
+     private Etudiant etudiant;
 
     @Override
     public String toString() {

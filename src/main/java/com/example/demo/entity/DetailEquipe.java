@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.entity;
 
 import javax.persistence.*;
 
@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class DetailEquipe {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int salle;
+    private Long salle;
     private String thematique;
 
     @OneToOne(mappedBy = "detailEquipe")
@@ -19,11 +19,11 @@ public class DetailEquipe {
                 '}';
     }
 
-    public int getSalle() {
+    public long getSalle() {
         return salle;
     }
 
-    public void setSalle(int salle) {
+    public void setSalle(long salle) {
         this.salle = salle;
     }
 

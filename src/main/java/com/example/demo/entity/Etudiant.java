@@ -1,11 +1,10 @@
-package com.example.demo;
+package com.example.demo.entity;
 
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Set;
 
-enum Option {
+enum    Option {
 GAMIX,SE,SIM,NIDS}
 @Entity
 @Table( name = " Etudiant")

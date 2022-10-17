@@ -1,6 +1,10 @@
 package com.example.demo.entity;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -8,6 +12,9 @@ enum    Option {
 GAMIX,SE,SIM,NIDS}
 @Entity
 @Table( name = " Etudiant")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Etudiant {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)

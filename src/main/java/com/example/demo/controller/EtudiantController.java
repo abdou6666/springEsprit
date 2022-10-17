@@ -14,8 +14,6 @@ public class EtudiantController {
     @Autowired
     IEtudiantService etudiantService;
 
-
-
    @GetMapping
     public List<Etudiant> getEtudiants(){
      return etudiantService.getAllEtudiant();
@@ -26,7 +24,7 @@ public class EtudiantController {
         return etudiantService.addEtudiant(etudiant);
     }
 
- /*   @PutMapping
+    @PutMapping
     public Etudiant updateEtudiant(Etudiant updateEtudiant){
         return etudiantService.updateEtudiant(updateEtudiant);
     }
@@ -34,8 +32,8 @@ public class EtudiantController {
     public void deleteEtudiant(@PathVariable("id") long id){
          etudiantService.deleteEtudiantById(id);
     }
-    @GetMapping
-    public Etudiant getEtudiantById(long id){
+    @GetMapping("/{id}")
+    public Etudiant getEtudiantById(@PathVariable("id") long id){
         return etudiantService.getEtudiantById(id);
-    } */
+    }
 }

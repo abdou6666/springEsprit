@@ -36,4 +36,11 @@ public class EtudiantController {
     public Etudiant getEtudiantById(@PathVariable("id") long id){
         return etudiantService.getEtudiantById(id);
     }
+
+    @GetMapping("/prenom/{prenom}")
+    public Etudiant getEtudiantByName(@PathVariable("prenom") String prenom){
+       return etudiantService.getEtudiantByPrenom(prenom);
+    }
+
+
 }

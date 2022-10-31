@@ -10,4 +10,6 @@ public interface IEtudiantService {
     Etudiant updateEtudiant(Etudiant updateEtudiant);
     void deleteEtudiantById(long id);
     Etudiant getEtudiantById(long id);
+
+    Etudiant getEtudiantByPrenom(String prenom);
 }

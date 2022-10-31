@@ -10,7 +10,7 @@ import java.util.List;
 
 @Service
 public class EquipeServiceImpl implements IEquipe{
-     @Autowired
+    @Autowired
     EquipeRepository equipeRepository;
 
     @Override
@@ -37,4 +37,11 @@ public class EquipeServiceImpl implements IEquipe{
     public Equipe getEquipeById(long id) {
         return equipeRepository.findById(id).get();
     }
+
+    @Override
+    public List<Equipe> findbyEtudiantsIdEtudiant(Long idEtudiant) {
+        return equipeRepository.findEquipeByEtudiantsIdEtudiant(idEtudiant);
+    }
+
+
 }

@@ -11,4 +11,6 @@ public interface IEquipe {
     Equipe updateEquipe(Equipe updateEquipe);
     void deleteEquipe(long id);
     Equipe getEquipeById(long id);
+
+    List<Equipe> findbyEtudiantsIdEtudiant(Long idEtudiant);
 }

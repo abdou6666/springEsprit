@@ -3,6 +3,7 @@ package com.example.demo.controller;
 
 import com.example.demo.entity.Equipe;
 import com.example.demo.service.EquipeServiceImpl;
+import com.example.demo.service.IEquipe;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,8 +12,11 @@ import java.util.List;
 @RestController
 @RequestMapping("equipe")
 public class EquipeController {
-    @Autowired
+
     EquipeServiceImpl equipeService;
+    EquipeController(EquipeServiceImpl equipeService){
+        this.equipeService = equipeService;
+    }
 
     @GetMapping
     List<Equipe> getListEquipes(){
@@ -24,15 +28,23 @@ public class EquipeController {
     }
     @PostMapping
     Equipe createEquipe(@RequestBody Equipe equipe){
-        return this.createEquipe(equipe);
+        return equipeService.addEquipe(equipe);
     }
 
     @PutMapping
     Equipe updateEquipe(@RequestBody Equipe equipe){
-        return this.updateEquipe(equipe);
+        return equipeService.updateEquipe(equipe);
     }
     @DeleteMapping("/{id}")
     void deleteEquipe(@PathVariable("id") long id){
-        this.deleteEquipe(id);
+        equipeService.deleteEquipe(id);
     }
+
+    @GetMapping("/equipes/{idEtudiant}")
+    List<Equipe> getEquipesByIdEtudiant(@PathVariable("idEtudiant") long idEtudiant){
+        return equipeService.findbyEtudiantsIdEtudiant(idEtudiant);
+    }
+
+
 }
+

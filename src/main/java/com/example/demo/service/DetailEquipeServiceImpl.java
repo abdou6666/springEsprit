@@ -36,4 +36,8 @@ public class DetailEquipeServiceImpl implements IDetailEquipe{
     public DetailEquipe getDetailEquipeById(long id) {
         return detailEquipeRepository.findById(id).get();
     }
+
+    public List<DetailEquipe> getDetailEquipeByThematique(String thematique){
+        return detailEquipeRepository.findByThematique(thematique);
+    }
 }

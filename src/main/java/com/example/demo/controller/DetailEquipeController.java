@@ -37,4 +37,9 @@ public class DetailEquipeController {
     void deleteEquipe(@PathVariable("id") long id){
         detailEquipeService.deleteDetailEquipe(id);
     }
+
+    @GetMapping("theme/{theme}")
+    public List<DetailEquipe> getByTheme(@PathVariable("theme") String theme){
+        return this.detailEquipeService.getDetailEquipeByThematique(theme);
+    }
 }

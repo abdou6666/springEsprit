@@ -41,6 +41,10 @@ public class EtudiantController {
     public Etudiant getEtudiantByName(@PathVariable("prenom") String prenom){
        return etudiantService.getEtudiantByPrenom(prenom);
     }
+    @PutMapping("/assignEtudiantToDepartement/{idEtudiant}/{idDepartement}")
+    public void assignEtudiantToDepartement(@PathVariable("idEtudiant") long idEtudiant,@PathVariable("idDepartement") int idDepartement){
+        etudiantService.assignEtudiantToDepartement(idEtudiant,idDepartement);
+    }
 
 
 }

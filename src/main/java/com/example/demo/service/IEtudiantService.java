@@ -12,4 +12,6 @@ public interface IEtudiantService {
     Etudiant getEtudiantById(long id);
 
     Etudiant getEtudiantByPrenom(String prenom);
+
+    public void assignEtudiantToDepartement(long idEtudiant,int idDepartement);
 }

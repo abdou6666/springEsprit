@@ -1,16 +1,23 @@
 package com.example.demo.service;
 
+import com.example.demo.entity.Departement;
 import com.example.demo.entity.Etudiant;
+import com.example.demo.repository.DepartementRepository;
 import com.example.demo.repository.EtudiantRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class EtudiantServiceImpl implements  IEtudiantService{
-    @Autowired
+
     EtudiantRepository etudiantRepository;
+
+
+    DepartementRepository departementRepository;
 
     @Override
     public List<Etudiant> getAllEtudiant() {
@@ -40,5 +47,15 @@ public class EtudiantServiceImpl implements  IEtudiantService{
     @Override
     public Etudiant getEtudiantByPrenom(String name) {
         return etudiantRepository.findByPrenomE(name);
+    }
+
+    @Override
+    public void assignEtudiantToDepartement(long idEtudiant, int idDepartement) {
+        Etudiant etudiant = this.etudiantRepository.findById(idEtudiant).orElse(null);
+        Departement departement = this.departementRepository.findById(idDepartement).orElse(null);
+        etudiant.setDepartement(departement);
+        etudiantRepository.save(etudiant);
+
+
     }
 }

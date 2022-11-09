@@ -10,7 +10,9 @@ import java.util.List;
 
 @Repository
 public interface EquipeRepository extends JpaRepository<Equipe,Long> {
-    public List<Equipe>findEquipeByEtudiantsIdEtudiant(long id);
+   // public List<Equipe>findEquipeByEtudiantsIdEtudiant(long id);
+    //List<Equipe> findByDetailEquipeThematiqueContains (String thematique);
+
     //public List<Equipe> findAllByEtudiantsContaining(long idEtudiant);
   // public List<Equipe> findEquipesByEtudiant(long id);
     ///public List<Equipe> findByEtudiantsIdEtudiant(long id);
@@ -19,7 +21,8 @@ public interface EquipeRepository extends JpaRepository<Equipe,Long> {
     // List<Equipe> findByEtudiantIdEtudiant (Integer idEtudiant);
     // cList<Equipe> findByEtudiantIdEtudiantAndDetailEquipeThematiqueNotNull (Integer idEtudiant);
 
-   // List<Equipe> findByEtudiantIdEtudiantAndEtudiantDepartementIdDepart (Integer idEtudiant, Integer idDepart);
+   // List<Equipe> findEquipeByEtudiantIdEtudiantAndEtudiantDepartementId (long idEtudiant, Integer idDepart);
+   //List<Equipe> findByEtudiantIdEtudiantAndEtudiantDepartementId (long idEtudiant, int id);
 
 
 }

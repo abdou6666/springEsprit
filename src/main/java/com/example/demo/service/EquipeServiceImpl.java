@@ -38,10 +38,10 @@ public class EquipeServiceImpl implements IEquipe{
         return equipeRepository.findById(id).get();
     }
 
-    @Override
+    /*   @Override
     public List<Equipe> findbyEtudiantsIdEtudiant(Long idEtudiant) {
         return equipeRepository.findEquipeByEtudiantsIdEtudiant(idEtudiant);
-    }
+    } */
 
 
 }

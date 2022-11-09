@@ -37,4 +37,9 @@ public class UniversiteController {
     void deleteUniversity(@PathVariable("id") int id){
         universiteService.deleteUniversite(id);
     }
+
+    @PutMapping("/assignUniversiteToDepartement/{idUniversite}/{idDepartement}")
+    public void assignUniversiteToDepartement(@PathVariable("idUniversite") int idUniversite,@PathVariable("idDepartement") int idDepartement){
+        universiteService.assignUniversiteToDepartement(idUniversite,idDepartement);
+    }
 }

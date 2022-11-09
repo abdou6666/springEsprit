@@ -11,4 +11,6 @@ public interface IUniversite {
     Universite updateUniversite(Universite updateUniversite);
     void deleteUniversite(int id);
     Universite getUniversiteById(int id);
+
+    void assignUniversiteToDepartement(int idUniversite,int idDepartement);
 }

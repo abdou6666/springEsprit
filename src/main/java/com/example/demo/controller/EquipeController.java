@@ -39,11 +39,11 @@ public class EquipeController {
     void deleteEquipe(@PathVariable("id") long id){
         equipeService.deleteEquipe(id);
     }
-
+/*
     @GetMapping("/equipes/{idEtudiant}")
     List<Equipe> getEquipesByIdEtudiant(@PathVariable("idEtudiant") long idEtudiant){
         return equipeService.findbyEtudiantsIdEtudiant(idEtudiant);
-    }
+    } */
 
 
 }

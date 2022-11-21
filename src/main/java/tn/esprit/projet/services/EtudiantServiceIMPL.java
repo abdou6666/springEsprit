@@ -90,7 +90,7 @@ public class EtudiantServiceIMPL implements IEtudiantService{
         Etudiant etudiant = etudiantRepository.findByPrenom(prenomE);
 
 
-        if(etudiant.getNom().equals(nomE) && etudiant.getContrats().stream().count() < 5){
+        if(etudiant.getNom().equals(nomE) && etudiant.getContrats().stream().count() <= 5){
             //Contrat c = contratRepository.save(ce);
             ce.setEtudiant(etudiant);
             etudiant.getContrats().add(ce);

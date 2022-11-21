@@ -11,6 +11,7 @@ import tn.esprit.projet.services.IContratService;
 import tn.esprit.projet.services.IDepartementService;
 
 import java.util.List;
+import java.util.Set;
 
 @RestController
 
@@ -48,5 +49,11 @@ public class DepartementController {
     public List<Departement> GetDepQ(@PathVariable("option" ) Option op){
 
         return  iDepartementService.retrieveDepartementByOptionEtudiant(op);
+    }
+
+    @GetMapping("/getIDU/{idUni}")
+    public Set<Departement> GetDepByIdUni(@PathVariable("idUni") Long ID){
+
+        return  iDepartementService.retrieveDepartementsByUniversite(ID);
     }
 }
